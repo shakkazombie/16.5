@@ -11,18 +11,17 @@ class App extends React.Component {
         super(props);
         this.state = {
             data: [{
-                    id: 1,
-                    text: 'clean room'
-                },
-                {
-                    id: 2,
-                    text: 'wash the dishes'
-                },
-                {
-                    id: 3,
-                    text: 'feed my cat'
-                }
-            ]
+                id: 1,
+                text: 'clean room'
+            },
+            {
+                id: 2,
+                text: 'wash the dishes'
+            },
+            {
+                id: 3,
+                text: 'feed my cat'
+            }]
         };
     }
     addTodo(val) {
@@ -39,19 +38,13 @@ class App extends React.Component {
     }
 
     render() {
-        return ( <
-            div className = { style.TodoApp } >
-            <
-            Title title = 'ToDo App'
-            length = { this.state.data.length }
-            /> <
-            TodoList dataList = { this.state.data }
-            removeTodo = {
-                (id) => this.removeTodo(id)
-            }
-            /> < /
-            div >
+        return (
+            <div className={style.TodoApp}>
+                <Title title='ToDo App' length={this.state.data.length} />
+                <TodoList dataList={this.state.data} removeTodo={(id) => this.removeTodo(id)} />
+            </div>
         );
     }
 }
 export default App;
+
